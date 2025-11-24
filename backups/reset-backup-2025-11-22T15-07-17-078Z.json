@@ -1,0 +1,204 @@
+{
+  "timestamp": "2025-11-22T15:07:17.076Z",
+  "transactions": [
+    {
+      "id": "cmi3dlnmx00013ibdwfuj2abu",
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "userEmail": "fahren@gmail.com",
+      "type": "in",
+      "method": "qris",
+      "amount": 10000,
+      "totalAmount": 10050,
+      "fee": 50,
+      "status": "success",
+      "createdAt": "2025-11-17T16:45:36.103Z",
+      "notes": null
+    },
+    {
+      "id": "cmi3e0xul00033ibdakzcpaix",
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "userEmail": "fahren@gmail.com",
+      "type": "in",
+      "method": "qris",
+      "amount": 10000,
+      "totalAmount": 10050,
+      "fee": 50,
+      "status": "failed",
+      "createdAt": "2025-11-17T16:57:29.179Z",
+      "notes": null
+    },
+    {
+      "id": "cmi4ds5ep000194agpk1spz3y",
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "userEmail": "fahren@gmail.com",
+      "type": "in",
+      "method": "qris",
+      "amount": 10000,
+      "totalAmount": 10050,
+      "fee": 50,
+      "status": "failed",
+      "createdAt": "2025-11-18T09:38:25.245Z",
+      "notes": null
+    },
+    {
+      "id": "cmiacolb50001cbngrsrvpy91",
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "userEmail": "fahren@gmail.com",
+      "type": "in",
+      "method": "manual",
+      "amount": 50000,
+      "totalAmount": 50000,
+      "fee": 0,
+      "status": "failed",
+      "createdAt": "2025-11-22T13:54:16.670Z",
+      "notes": null
+    },
+    {
+      "id": "cmiaepenu0001nz0mssxrsg2j",
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "userEmail": "fahren@gmail.com",
+      "type": "out",
+      "method": "adjustment",
+      "amount": 10000,
+      "totalAmount": 10000,
+      "fee": 0,
+      "status": "success",
+      "createdAt": "2025-11-22T14:50:53.942Z",
+      "notes": null
+    },
+    {
+      "id": "cmiaer1rw000bnz0mio0s2oyb",
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "userEmail": "fahren@gmail.com",
+      "type": "out",
+      "method": "adjustment",
+      "amount": 10000,
+      "totalAmount": 10000,
+      "fee": 0,
+      "status": "success",
+      "createdAt": "2025-11-22T14:52:10.557Z",
+      "notes": null
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "cmiaepeot0003nz0m8qxhu8jw",
+      "action": "adjust",
+      "entityType": "balance",
+      "entityId": "cmi3bek0p0000h9rgst2ll001",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "Hanya testing saja karena nominal tidak sesuai",
+      "performedAt": "2025-11-22T14:50:53.981Z"
+    },
+    {
+      "id": "cmiaepep80005nz0m8o83rqdx",
+      "action": "create",
+      "entityType": "transaction",
+      "entityId": "cmiaepenu0001nz0mssxrsg2j",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "Hanya testing saja karena nominal tidak sesuai",
+      "performedAt": "2025-11-22T14:50:53.996Z"
+    },
+    {
+      "id": "cmiaeq2xm0007nz0mjmikaxb8",
+      "action": "delete",
+      "entityType": "transaction",
+      "entityId": "cmiaepenu0001nz0mssxrsg2j",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "Penghapusan",
+      "performedAt": "2025-11-22T14:51:25.402Z"
+    },
+    {
+      "id": "cmiaeq2xv0009nz0mljyyoos9",
+      "action": "adjust",
+      "entityType": "balance",
+      "entityId": "cmi3bek0p0000h9rgst2ll001",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "Balance adjusted due to transaction deletion: cmiaepenu0001nz0mssxrsg2j",
+      "performedAt": "2025-11-22T14:51:25.411Z"
+    },
+    {
+      "id": "cmiaer1si000dnz0muyrufdbk",
+      "action": "adjust",
+      "entityType": "balance",
+      "entityId": "cmi3bek0p0000h9rgst2ll001",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "snaciasiubca",
+      "performedAt": "2025-11-22T14:52:10.578Z"
+    },
+    {
+      "id": "cmiaer1ss000fnz0madp4nio8",
+      "action": "create",
+      "entityType": "transaction",
+      "entityId": "cmiaer1rw000bnz0mio0s2oyb",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "snaciasiubca",
+      "performedAt": "2025-11-22T14:52:10.589Z"
+    },
+    {
+      "id": "cmiaerjdd000hnz0mjr86fndo",
+      "action": "delete",
+      "entityType": "transaction",
+      "entityId": "cmi3dlnmx00013ibdwfuj2abu",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "jak dkjcajskqf",
+      "performedAt": "2025-11-22T14:52:33.361Z"
+    },
+    {
+      "id": "cmiaerjdr000jnz0mw2mtk9yz",
+      "action": "adjust",
+      "entityType": "balance",
+      "entityId": "cmi3bek0p0000h9rgst2ll001",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "Balance adjusted due to transaction deletion: cmi3dlnmx00013ibdwfuj2abu",
+      "performedAt": "2025-11-22T14:52:33.375Z"
+    },
+    {
+      "id": "cmiaerome000lnz0m886mqmuw",
+      "action": "delete",
+      "entityType": "transaction",
+      "entityId": "cmi3e0xul00033ibdakzcpaix",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": "kaj B DACDA",
+      "performedAt": "2025-11-22T14:52:40.166Z"
+    }
+  ],
+  "userBalances": [
+    {
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "email": "fahren@gmail.com",
+      "balance": -10000
+    }
+  ],
+  "summary": {
+    "totalTransactions": 6,
+    "totalAuditLogs": 9,
+    "totalUsers": 1,
+    "totalBalance": -10000
+  }
+}

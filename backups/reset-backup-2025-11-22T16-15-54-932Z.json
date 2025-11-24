@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-11-22T16:15:54.932Z",
+  "transactions": [],
+  "auditLogs": [
+    {
+      "id": "cmiahpru50005j6ob6ksysf5f",
+      "action": "delete",
+      "entityType": "user",
+      "entityId": "cmiahnr250003j6ob3t99a864",
+      "performedBy": "cmi3bek0p0000h9rgst2ll001",
+      "performerName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "performerEmail": "fahren@gmail.com",
+      "reason": ".l bjoijbip",
+      "performedAt": "2025-11-22T16:15:09.868Z"
+    }
+  ],
+  "userBalances": [
+    {
+      "userId": "cmi3bek0p0000h9rgst2ll001",
+      "userName": "MUHAMAD FAHREN ANDREAN RANGKUTI",
+      "email": "fahren@gmail.com",
+      "balance": 0
+    }
+  ],
+  "summary": {
+    "totalTransactions": 0,
+    "totalAuditLogs": 1,
+    "totalUsers": 1,
+    "totalBalance": 0
+  }
+}

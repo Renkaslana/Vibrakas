@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.pageContainer {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #020410;
+  font-family: 'Poppins', sans-serif;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/background.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(10px);
+  z-index: 0;
+}
+
+.formContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+  20%, 40%, 60%, 80% { transform: translateX(8px); }
+}
+
+.otpWrapper.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.errorMessage {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+}
+
+.otpWrapper {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.otpInput {
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fff;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.otpInput:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.otpInputFilled {
+  border-color: #4caf50;
+  background: #f1f8f4;
+}
+
+.otpInputError {
+  border-color: #f44336;
+  background: #ffebee;
+}
+
+.otpWrapper.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.otpInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn {
+  width: 100%;
+  height: 48px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.btn:hover:not(:disabled) {
+  background: #e60000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.4);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.resendContainer {
+  text-align: center;
+}
+
+.resendLink {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.resendLink:hover:not(:disabled) {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+.resendLink:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorContainer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #e4e4e4;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 400px;
+}
+
+.errorContainer h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+}
+
+.errorContainer p {
+  margin: 0 0 24px 0;
+  opacity: 0.9;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .formContainer {
+    max-width: 100%;
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .otpWrapper {
+    gap: 10px;
+  }
+
+  .otpInput {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .btn {
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .resendLink {
+    font-size: 13px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .formContainer {
+    max-width: 380px;
+  }
+}
+

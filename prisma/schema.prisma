@@ -1,0 +1,126 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("anggota") // "admin", "bendahara", "anggota"
+  balance   Float    @default(0)
+  emailVerified Boolean @default(false) // Status verifikasi email
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  transactions Transaction[]
+  auditLogs AuditLog[]
+  dataResetLogs DataResetLog[]
+  emailVerifications EmailVerification[]
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        String   @default("in") // "in", "out", "adjustment"
+  method      String   // "qris", "va", "manual", "adjustment"
+  amount      Float
+  totalAmount Float    // amount + fee
+  fee         Float    @default(0)
+  status      String   @default("pending") // "pending", "success", "failed"
+  paymentId   String?  @unique // ID from payment gateway
+  qrisCode    String?  // QRIS code string
+  vaNumber    String?  // Virtual Account number
+  proofImage  String?  // Bukti transfer untuk manual
+  notes       String?  // Catatan
+  expiredAt   DateTime?
+  // Approval tracking untuk transfer manual
+  approvedBy  String?  // ID user yang approve (admin/bendahara)
+  approvedAt  DateTime? // Waktu approval
+  rejectedBy  String?  // ID user yang reject (admin/bendahara)
+  rejectedAt  DateTime? // Waktu rejection
+  treasurerAccountId String? // ID rekening bendahara yang dipilih untuk transfer manual
+  // Soft delete fields
+  isDeleted   Boolean  @default(false)
+  deletedAt   DateTime?
+  deletedBy   String?  // ID user yang delete
+  deleteReason String? // Alasan penghapusan
+  // Adjustment fields
+  isAdjustment Boolean @default(false)
+  adjustmentReason String? // Alasan adjustment
+  originalBalance Float? // Saldo sebelum adjustment
+  newBalance      Float? // Saldo setelah adjustment
+  // Audit fields
+  lastModifiedBy String?
+  lastModifiedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TreasurerAccount {
+  id            String   @id @default(cuid())
+  bankName      String
+  accountName   String
+  accountNumber String
+  qrisImage     String?  // URL gambar QRIS statis
+  notes         String?  // Instruksi pembayaran
+  isActive      Boolean  @default(true) // Untuk enable/disable rekening
+  order         Int      @default(0) // Urutan tampilan
+  updatedAt     DateTime @updatedAt
+  createdAt     DateTime @default(now())
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  action      String   // "delete", "adjust", "approve", "reject", "create", "update"
+  entityType  String   // "transaction", "balance", "user", "treasurer_account"
+  entityId    String
+  oldValue    String?  // JSON string of old value
+  newValue    String?  // JSON string of new value
+  reason      String?  // Alasan perubahan
+  performedBy String   // ID user yang melakukan action
+  performer   User     @relation(fields: [performedBy], references: [id])
+  performedAt DateTime @default(now())
+  ipAddress  String?
+  userAgent  String?
+}
+
+model DataResetLog {
+  id                String   @id @default(cuid())
+  performedBy       String   // ID admin yang melakukan reset
+  performer         User     @relation(fields: [performedBy], references: [id])
+  performedAt       DateTime @default(now())
+  reason            String   // Alasan reset (minimal 20 karakter)
+  dataSummary       String   // JSON summary data yang dihapus
+  totalTransactions Int      // Jumlah transaksi yang dihapus
+  totalUsers         Int      // Jumlah user yang saldonya direset
+  totalAuditLogs     Int      // Jumlah audit log yang dihapus
+  totalBalance       Float    // Total saldo yang direset
+  ipAddress          String?
+  userAgent          String?
+}
+
+model EmailVerification {
+  id          String   @id @default(cuid())
+  email       String   // Email yang akan diverifikasi
+  otpCode     String   // 6 digit OTP
+  otpExpires  DateTime // Expired dalam 10 menit
+  isVerified  Boolean  @default(false)
+  verifiedAt  DateTime?
+  purpose     String   // "register" atau "change_email"
+  userId      String?  // ID user (untuk change_email, null untuk register)
+  user        User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // Temporary registration data (encrypted/hashed)
+  registrationData String? // JSON string dengan name, email, password hash (untuk register)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+

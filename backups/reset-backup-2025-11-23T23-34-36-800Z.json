@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-11-23T23:34:36.800Z",
+  "transactions": [],
+  "auditLogs": [
+    {
+      "id": "cmiccsyxz00032oifem2btls2",
+      "action": "delete",
+      "entityType": "user",
+      "entityId": "cmicco5m100012oifzltmvx2r",
+      "performedBy": "cmiajd9i80000qeicehhq5481",
+      "performerName": "Fahren Andrean Rangkuti",
+      "performerEmail": "admin@vibrakas.com",
+      "reason": "lkiwabchfoafcwoi",
+      "performedAt": "2025-11-23T23:33:13.317Z"
+    },
+    {
+      "id": "cmicctsob00052oifbahvfpno",
+      "action": "delete",
+      "entityType": "user",
+      "entityId": "cmiaiv1f20001yegef6mouu1l",
+      "performedBy": "cmiajd9i80000qeicehhq5481",
+      "performerName": "Fahren Andrean Rangkuti",
+      "performerEmail": "admin@vibrakas.com",
+      "reason": "awBDIAKLFIWAFB",
+      "performedAt": "2025-11-23T23:33:51.852Z"
+    }
+  ],
+  "userBalances": [
+    {
+      "userId": "cmiajd9i80000qeicehhq5481",
+      "userName": "Fahren Andrean Rangkuti",
+      "email": "admin@vibrakas.com",
+      "balance": 0
+    }
+  ],
+  "summary": {
+    "totalTransactions": 0,
+    "totalAuditLogs": 2,
+    "totalUsers": 1,
+    "totalBalance": 0
+  }
+}
