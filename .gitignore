@@ -39,6 +39,7 @@ next-env.d.ts
 /prisma/migrations
 /prisma/*.db
 /prisma/*.db-journal
+/prisma/prisma/
 
 # admin credentials (sensitive)
 ADMIN_CREDENTIALS.md
