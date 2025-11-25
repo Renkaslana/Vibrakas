@@ -35,25 +35,27 @@ export default function GradientButton({
   type = 'submit',
   ...props
 }: GradientButtonProps) {
+  const motionButtonProps = {
+    type,
+    disabled: disabled || loading,
+    onClick,
+    whileHover: { scale: disabled || loading ? 1 : 1.02 },
+    whileTap: { scale: disabled || loading ? 1 : 0.98 },
+    className: cn(
+      'w-full py-4 px-6 rounded-2xl font-semibold',
+      'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500',
+      'text-white shadow-lg',
+      'hover:shadow-xl hover:shadow-purple-500/30',
+      'transition-all duration-300',
+      'disabled:opacity-50 disabled:cursor-not-allowed',
+      'relative overflow-hidden group',
+      className
+    ),
+    ...(props as any)
+  } as any
+
   return (
-    <motion.button
-      type={type}
-      disabled={disabled || loading}
-      onClick={onClick}
-      whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
-      whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
-      className={cn(
-        'w-full py-4 px-6 rounded-2xl font-semibold',
-        'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500',
-        'text-white shadow-lg',
-        'hover:shadow-xl hover:shadow-purple-500/30',
-        'transition-all duration-300',
-        'disabled:opacity-50 disabled:cursor-not-allowed',
-        'relative overflow-hidden group',
-        className
-      )}
-      {...(props as React.ComponentPropsWithoutRef<'button'>)}
-    >
+    <motion.button {...motionButtonProps}>
       {/* Shine effect */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
