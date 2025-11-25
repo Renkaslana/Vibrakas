@@ -294,11 +294,11 @@ export default function ChangeEmailForm({ currentEmail, userName }: ChangeEmailF
             <strong>Langkah-langkah:</strong>
           </p>
           <ol className="list-decimal list-inside mt-2 text-sm text-blue-700 dark:text-blue-300 space-y-1">
-            <li>Klik tombol "Kirim OTP" untuk mengirim kode verifikasi ke email lama</li>
+            <li>Klik tombol &quot;Kirim OTP&quot; untuk mengirim kode verifikasi ke email lama</li>
             <li>Cek inbox email <strong>{currentEmail}</strong></li>
             <li>Masukkan kode OTP yang diterima</li>
             <li>Masukkan email baru yang ingin digunakan</li>
-            <li>Klik "Verifikasi & Ubah Email"</li>
+            <li>Klik &quot;Verifikasi &amp; Ubah Email&quot;</li>
           </ol>
         </div>
 

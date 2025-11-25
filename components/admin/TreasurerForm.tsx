@@ -179,7 +179,7 @@ export default function TreasurerForm({ initialData }: TreasurerFormProps) {
         {accounts.length === 0 ? (
           <Card>
             <CardContent className="py-8 text-center text-muted-foreground">
-              Belum ada rekening. Klik "Tambah Rekening" untuk menambahkan.
+              Belum ada rekening. Klik &quot;Tambah Rekening&quot; untuk menambahkan.
             </CardContent>
           </Card>
         ) : (

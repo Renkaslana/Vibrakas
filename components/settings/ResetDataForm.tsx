@@ -292,7 +292,7 @@ export default function ResetDataForm() {
             {/* Confirm Text Input */}
             <div className="space-y-2">
               <Label htmlFor="confirm-text">
-                Ketik <strong>"{CONFIRM_TEXT}"</strong> untuk konfirmasi:
+                Ketik <strong>&quot;{CONFIRM_TEXT}&quot;</strong> untuk konfirmasi:
               </Label>
               <Input
                 id="confirm-text"
