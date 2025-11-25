@@ -4,7 +4,22 @@ import { motion } from 'framer-motion'
 import { LucideIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-interface GradientButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onAnimationEnd' | 'onAnimationIteration'> {
+type ButtonPropsWithoutConflicts = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  | 'onAnimationStart' 
+  | 'onAnimationEnd' 
+  | 'onAnimationIteration'
+  | 'onDragStart'
+  | 'onDrag'
+  | 'onDragEnd'
+  | 'onDragEnter'
+  | 'onDragExit'
+  | 'onDragLeave'
+  | 'onDragOver'
+  | 'onDrop'
+>
+
+interface GradientButtonProps extends ButtonPropsWithoutConflicts {
   loading?: boolean
   icon?: LucideIcon
   children: React.ReactNode
@@ -16,12 +31,15 @@ export default function GradientButton({
   children,
   className,
   disabled,
+  onClick,
+  type = 'submit',
   ...props
 }: GradientButtonProps) {
   return (
     <motion.button
-      type="submit"
+      type={type}
       disabled={disabled || loading}
+      onClick={onClick}
       whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
       whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
       className={cn(
@@ -34,7 +52,7 @@ export default function GradientButton({
         'relative overflow-hidden group',
         className
       )}
-      {...props}
+      {...(props as React.ComponentPropsWithoutRef<'button'>)}
     >
       {/* Shine effect */}
       <motion.div
